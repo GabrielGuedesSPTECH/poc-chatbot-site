@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-13T12:01:01.674967" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\Guedes\Desktop\Trabalho\coe\pacaembu\poc-chatbot-site\tests">
+<suite id="s1-s1" name="Mandar-Msg" source="C:\Users\Guedes\Desktop\Trabalho\coe\pacaembu\poc-chatbot-site\tests\mandar-msg.robot">
+<test id="s1-s1-t1" name="Clicar no botão" line="28">
+<kw name="Abrir navegador">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-13T12:01:02.033691" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000207DFAE5A90&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-13T12:01:02.033413" elapsed="0.000313"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-13T12:01:02.033831" elapsed="0.000111"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-13T12:01:02.034020" elapsed="0.000085"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-13T12:01:02.034165" elapsed="0.000081"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-13T12:01:02.034302" elapsed="0.000066"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-06-13T12:01:02.034541" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-06-13T12:01:02.034428" elapsed="1.199775"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-13T12:01:03.234510" level="INFO">Opening url 'https://pacaembu.com/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-13T12:01:03.234362" elapsed="1.601316"/>
+</kw>
+<status status="PASS" start="2025-06-13T12:01:02.032919" elapsed="2.802868"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Clicar no chat">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EXPAND_CHAT_BUTTON}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T12:01:04.836762" elapsed="0.026846"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-13T12:01:04.863977" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[1]/button'.</msg>
+<arg>${EXPAND_CHAT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T12:01:04.863774" elapsed="0.070228"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-13T12:01:14.934985" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-13T12:01:04.934202" elapsed="10.000947"/>
+</kw>
+<status status="PASS" start="2025-06-13T12:01:04.836550" elapsed="10.098774"/>
+</kw>
+<arg>5 times</arg>
+<arg>3s</arg>
+<arg>Clicar no chat</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-06-13T12:01:04.836200" elapsed="10.099231"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHAT_IFRAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T12:01:14.935990" elapsed="0.047850"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-06-13T12:01:14.984751" level="INFO">Selecting frame 'id:embeddedMessagingFrame'.</msg>
+<arg>${CHAT_IFRAME}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-06-13T12:01:14.984433" elapsed="0.057068"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-06-13T12:01:15.043474" level="INFO">Sending key(s) ('Oi', 'ENTER') to page.</msg>
+<msg time="2025-06-13T12:01:15.043714" level="INFO">Sending keys Oi</msg>
+<msg time="2025-06-13T12:01:15.085372" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2025-06-13T12:01:15.085570" level="INFO">Releasing special key ENTER.</msg>
+<arg>${None}</arg>
+<arg>Oi</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-06-13T12:01:15.042240" elapsed="0.082123"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-13T12:01:25.126436" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-13T12:01:15.125297" elapsed="10.001388"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-06-13T12:01:25.127783" elapsed="2.200142"/>
+</kw>
+<status status="PASS" start="2025-06-13T12:01:02.032145" elapsed="25.296343"/>
+</test>
+<status status="PASS" start="2025-06-13T12:01:01.693986" elapsed="25.636653"/>
+</suite>
+<status status="PASS" start="2025-06-13T12:01:01.675993" elapsed="25.656774"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Mandar-Msg" id="s1-s1" pass="1" fail="0" skip="0">Tests.Mandar-Msg</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
